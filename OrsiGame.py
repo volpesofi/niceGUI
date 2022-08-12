@@ -8,8 +8,10 @@ from tkinter.ttk import *
 # creates a Tk() object
 master = tk.Tk()
 
-bar = " " * 80
-btFont = 12
+bar = " " * 50
+btFont = 14
+inFont = 16
+sFont  = 18
  
 # sets the geometry of main
 # root window
@@ -24,13 +26,13 @@ def codeChecker (window, entry, nQuiz, rightAnswer):
     answ = entry.get()
 
     if answ == rightAnswer :
-        outText = " " * 25 + "Codice corretto!" + " " * 25
+        outText  =  "Codice corretto!" + " " * 35 
         outColor = "green"
     else:
-        outText = "Controlla il QUIZ "+ str(nQuiz) + " e prova ancora!"
+        outText  = "Controlla il QUIZ "+ str(nQuiz) + " e prova ancora!"
         outColor = "red"
-    label = tk.Label(window, text= outText, fg=outColor, font=("Helvetica", 16))
-    label.grid(row = int(nQuiz), column = 2, padx = 5, sticky="N")
+    label = tk.Label(window, text= outText, fg=outColor, font=("Helvetica", inFont))
+    label.grid(row = int(nQuiz), column = 2, padx = 5, sticky="W")
 
 def all_good(window,  entry1, entry2, entry3, ra1, ra2, ra3):
     x1 = entry1.get()
@@ -38,7 +40,7 @@ def all_good(window,  entry1, entry2, entry3, ra1, ra2, ra3):
     x3 = entry3.get()
     if  x1 == ra1  and  x2 == ra2  and  x3 == ra3 :
         output_T = "  Il mondo è salvo! Grazie!  "
-        output_C = '#00FF7F'
+        output_C = '#006400'
     else:
         output_T = "  Non ti arrendere! Riprova.  "
         output_C = '#DC143C'
@@ -59,7 +61,7 @@ def openWindowGroup(group, color, code1, code2, code3):
     newWindow.title("Gruppo" + group + " - Controlla i tuoi codici")
  
     # sets the geometry of toplevel
-    newWindow.geometry("800x500")
+    newWindow.geometry("900x450")
  
     # A Label widget to show in toplevel
 
@@ -72,40 +74,41 @@ def openWindowGroup(group, color, code1, code2, code3):
     welcome_label.grid(row=0, column=0, columnspan = 3,  padx=30, pady=30)
 
     # first code 
-    entry1 = tk.Entry (newWindow)
-    entry1.grid(row=1, column=0, sticky="N", padx=5)
+    entry1 = tk.Entry (newWindow, 
+                       font=("Helvetica", inFont))
+    entry1.grid(row=1, column=0, sticky="W", padx=5, pady = 5)
     button1 = tk.Button(newWindow, 
                         text='CONTROLLO CODICE QUIZ 1', 
                         command = lambda: codeChecker(window = newWindow, entry = entry1, nQuiz = 1, rightAnswer = code1), 
                         fg="black", 
                         font=("Helvetica", btFont))
-    button1.grid(row = 1, column = 1, sticky = "N")
-    space1 = tk.Label(newWindow, text= bar, font = ("Helvetica", 16))
-    space1.grid(row = 1, column = 2, padx = 5, sticky="N")
+    button1.grid(row = 1, column = 1, sticky = "W")
+    space1 = tk.Label(newWindow, text= bar, font = ("Helvetica", sFont))
+    space1.grid(row = 1, column = 2, padx = 5, sticky="W")
 
     # second code
-    entry2 = tk.Entry (newWindow)
-    entry2.grid(row=2, column=0, sticky="N", padx=5)
+    entry2 = tk.Entry (newWindow, font=("Helvetica", inFont))
+    entry2.grid(row=2, column=0, sticky="W", padx=5, pady = 5)
     button2 = tk.Button(newWindow,
                         text='CONTROLLO CODICE QUIZ 2',
                         command = lambda: codeChecker(window = newWindow, entry = entry2, nQuiz = 2, rightAnswer = code2),
                         fg="black",
                         font=("Helvetica", btFont))
-    button2.grid(row = 2, column = 1, sticky = "N")
-    space2 = tk.Label(newWindow, text= bar, font = ("Helvetica", 16))
-    space2.grid(row = 2, column = 2, padx = 5, sticky="N")
+    button2.grid(row = 2, column = 1, sticky = "W")
+    space2 = tk.Label(newWindow, text= bar, font = ("Helvetica", sFont))
+    space2.grid(row = 2, column = 2, padx = 5, sticky="W")
 
     # third code
-    entry3 = tk.Entry (newWindow)
-    entry3.grid(row=3, column=0, sticky="N", padx=5)
+    entry3 = tk.Entry (newWindow, font=("Helvetica", inFont))
+    entry3.grid(row=3, column=0, sticky="W", padx=5, pady = 5)
     button3 = tk.Button(newWindow,
                         text='CONTROLLO CODICE QUIZ 3',
                         command = lambda: codeChecker(window = newWindow, entry = entry3, nQuiz = 3, rightAnswer = code3),
                         fg="black",
                         font=("Helvetica", btFont))
-    button3.grid(row = 3, column = 1, sticky = "N")
-    space3 = tk.Label(newWindow, text= bar, font = ("Helvetica", 16))
-    space3.grid(row = 3, column = 2, padx = 5, sticky="N")
+    button3.grid(row = 3, column = 1, sticky = "W")
+    space3 = tk.Label(newWindow, text= bar, font = ("Helvetica", sFont))
+    space3.grid(row = 3, column = 2, padx = 5, sticky="W")
     
     # final check
     colorALL = '#FF6347' #'#ff7f00' 

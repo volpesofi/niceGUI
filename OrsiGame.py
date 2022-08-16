@@ -15,7 +15,7 @@ sFont  = 18
  
 # sets the geometry of main
 # root window
-master.geometry("500x300")
+master.geometry("800x500")
 master.configure(background="black")
 master.title("Seleziona la tua squadra")
 
@@ -61,7 +61,7 @@ def openWindowGroup(group, color, code1, code2, code3):
     newWindow.title("Gruppo" + group + " - Controlla i tuoi codici")
  
     # sets the geometry of toplevel
-    newWindow.geometry("900x450")
+    newWindow.geometry("750x450")
  
     # A Label widget to show in toplevel
 
@@ -125,16 +125,17 @@ def openWindowGroup(group, color, code1, code2, code3):
     button_all.grid(row = 4, column = 0,  padx= 5, pady=30)
 
 
-label = tk.Label(master,
-              text = " Seleziona la tua squadra ",
-              font = ("Helvetica", 26),
-              bg = "black", fg = "white")
+labelTitle = tk.Label(master,
+                      text = " Seleziona la tua squadra ",
+                      font = ("Helvetica", 46),
+                      bg = "black", fg = "white")
  
-label.pack(pady = 10)
+labelTitle.pack(pady = 20)
  
 # a button widget which will open a
 # new window on button click
 
+fontG = 36
 colorA = '#228b22'
 btnA = tk.Button(master,
                  text                = 'Gruppo A',
@@ -145,11 +146,11 @@ btnA = tk.Button(master,
                  highlightcolor      = colorA,
                  highlightbackground = colorA,
                  borderwidth         = 4,
-                 font                = ("Helvetica", 22),
+                 font                = ("Helvetica", fontG),
                  command = lambda : openWindowGroup(group = "A", 
                                                     color = colorA, 
                                                     code1 = "314", code2 = "159", code3 = "265") )
-btnA.pack(pady = 10)
+btnA.pack(pady = 20)
 
 colorB = '#9a32cd'
 btnB = tk.Button(master,
@@ -161,11 +162,11 @@ btnB = tk.Button(master,
                  highlightcolor      = colorB,
                  highlightbackground = colorB,
                  borderwidth         = 4,
-                 font                = ("Helvetica", 22),
+                 font                = ("Helvetica", fontG),
                  command = lambda : openWindowGroup(group = "B",
                                                     color = colorB,
                                                     code1 = "358", code2 = "979", code3 = "323") )
-btnB.pack(pady = 10)
+btnB.pack(pady = 20)
 
 colorC = '#37d3ff'
 btnC = tk.Button(master, 
@@ -177,11 +178,11 @@ btnC = tk.Button(master,
                  highlightcolor      = colorC, 
                  highlightbackground = colorC, 
                  borderwidth         = 4,
-                 font                = ("Helvetica", 22),
+                 font                = ("Helvetica", fontG),
                  command = lambda : openWindowGroup(group = "C", 
                                                     color = colorC,
                                                     code1 = "846", code2 = "264", code3 = "338") )
-btnC.pack(pady = 10)
+btnC.pack(pady = 20)
  
 # mainloop, runs infinitely
 tk.mainloop()

@@ -18,11 +18,11 @@ sFont  = 18
  
 # sets the geometry of main
 # root window
-master.geometry("2000x1200")
+master.geometry("1200x800")
 master.configure(background="black")
 master.title("Seleziona la tua squadra")
 
-bg = tk.PhotoImage(file = "1200x800.png") 
+bg = tk.PhotoImage(file = "/Users/tascini.annasofia/niceGUI/1200x800.png") 
 
 # master.create_image( 0, 0, image = bg,  anchor = "nw")
 
@@ -133,7 +133,7 @@ def openWindowGroup(group, color, code1, code2, code3):
 
 
 background_label = tk.Label(master, image=bg)
-background_label.place(x=0, y=0, relwidth=1, relheight=1)
+background_label.place(x=0, y=0) #, relwidth=1, relheight=1)
 
 
 # logo = tk.PhotoImage(file = "/Users/tascini.annasofia/Dropbox (HSR Global)/CTGB_ADM/Communication/Logo/Logo_COSR/COSR_TB.png")
@@ -170,7 +170,7 @@ btnA = tk.Button(master,
                                                     color = colorA, 
                                                     code1 = "314", code2 = "159", code3 = "265") )
 # btnA.pack(pady = 20)
-btnA.place(x = 620, y = 290)
+btnA.place(x = 500, y = 290)
 
 colorB = '#009cde'
 btnB = tk.Button(master,
@@ -187,7 +187,7 @@ btnB = tk.Button(master,
                                                     color = colorB,
                                                     code1 = "358", code2 = "979", code3 = "323") )
 # btnB.pack(pady = 20)
-btnB.place(x = 620, y = 380)
+btnB.place(x = 500, y = 380)
 
 colorC = '#ffc72c'
 btnC = tk.Button(master, 
@@ -204,7 +204,7 @@ btnC = tk.Button(master,
                                                     color = colorC,
                                                     code1 = "846", code2 = "264", code3 = "338") )
 # btnC.pack(pady = 20)
-btnC.place(x = 620, y = 470) 
+btnC.place(x = 500, y = 470) 
 
 # mainloop, runs infinitely
 tk.mainloop()

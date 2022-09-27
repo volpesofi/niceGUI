@@ -22,7 +22,11 @@ master.geometry("1200x800")
 master.configure(background="black")
 master.title("Seleziona la tua squadra")
 
+
+########## path file to update ##############
 bg = tk.PhotoImage(file = "/Users/tascini.annasofia/niceGUI/1200x800.png") 
+
+
 
 # master.create_image( 0, 0, image = bg,  anchor = "nw")
 
